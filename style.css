@@ -1,0 +1,247 @@
+/* ...css variable.............. */
+:root {
+  --color-dark: #333;
+  --color-medium: #414141;
+  --color-light: #b3b0b0;
+  --color-green: #17f5d7;
+  --color-silver: #dee1e4;
+  --color-white: #fff;
+
+  --bg-body: #000;
+  --bg-light: #e4e1e1;
+  --bg-dark: #666363;
+  --bg-nav: dodgerblue;
+  /* --bg-white: #fff; */
+}
+/* ............Resetting style ....................... */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--color-silver);
+  line-height: 2rem;
+  margin: 0.8rem 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+section,
+article,
+main {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Open Sans Condensed", sans-serif, serif, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.1rem;
+  background: var(--bg-body);
+  color: var(--color-silver) !important;
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin-right: 1rem;
+  padding-top: 0.5rem;
+}
+
+p {
+  padding: 0.5rem 0;
+}
+
+/* Navbar rules ................*/
+.nav {
+  min-width: 15vw;
+  min-height: 40vh;
+  background: var(--bg-nav);
+  padding: 1rem 0.5rem;
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  z-index: 999;
+  display: grid;
+  align-items: center; /* verticle align */
+  margin-bottom: 0;
+}
+
+.nav__title {
+  margin: 0;
+  padding: 0;
+}
+.nav__link {
+  color: #000;
+  transition: all 0.2s ease-in-out;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.1rem;
+}
+
+.nav__link:hover {
+  color: var(--color-silver);
+}
+
+/* Welcome Section style....viewport height. */
+#welcome-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: green;
+}
+
+.welcome__text2 {
+  letter-spacing: 0.3rem;
+  word-spacing: 0.3rem;
+  text-shadow: 1px 1px 4px black;
+}
+/* Spacing main content  */
+#main {
+  max-width: 100%;
+  padding: 5rem 5rem;
+  margin-left: 15vw;
+}
+
+/* Project section */
+h1 {
+  text-transform: uppercase;
+}
+
+.projects-section,
+.about-section {
+  padding: 0 0 8rem 0;
+}
+
+/* Footer...... */
+#footer {
+  max-width: 100%;
+  padding: 1rem 5rem;
+  min-height: auto;
+}
+
+.footer__link {
+  color: blue;
+}
+
+/* ..............GridLayout. for image & content .............. */
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.d-flex--col {
+  flex-direction: column;
+}
+.d-grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-grid--autofit {
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 2rem;
+}
+.grid--2col {
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-gap: 40px;
+}
+
+/* ................Button style .....................*/
+#profile-link {
+  display: block;
+  cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  transition: all 0.2s linear;
+  font-size: 1.2rem;
+  width: 50%;
+  margin: 3rem auto;
+  box-shadow: 1px 1px 3px white;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: var(--color-light);
+  text-align: center;
+}
+/* button hover effect */
+#profile-link:hover {
+  background: blue;
+  color: var(--color-white);
+  box-shadow: none;
+}
+
+/* UTILITIES................. */
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 2px;
+}
+.card__header {
+  background: blue;
+  color: #fff;
+  padding: 0.5rem;
+}
+.card__body {
+  padding: 1.5rem;
+}
+.card__footer {
+  margin-top: auto;
+  border-top: 1px solid blue;
+  padding: 0.5rem;
+  color: #fff !important;
+}
+
+/* Screen below 600px: section & element Spacing  */
+@media (max-width: 600px) {
+  /* Button */
+  #profile-link {
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+  }
+  #main {
+    padding: 2rem 2rem;
+  }
+
+  /* Align center */
+  #about-section,
+  #contact,
+  #footer {
+    text-align: center;
+  }
+
+  /* navbar stick to top on small screen...*/
+  .nav {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 40px;
+  }
+  .nav__ul {
+    flex-direction: row;
+  }
+  .nav__title {
+    display: none;
+  }
+}
